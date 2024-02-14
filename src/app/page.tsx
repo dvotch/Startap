@@ -1,24 +1,15 @@
-"use client";
 
-import { Button } from "@/shared/ui/button";
-import { useState } from "react";
 
-export default function Home() {
-  const handleClick = () => {
-    setTestotserone((e) => e + Math.random());
-  };
+import { CoursesList } from "@/features/courses-list/pub/courses-list";
+import { CreateCourseForm } from "@/features/courses-list/pub/create-course-form";
+import { PrismaClient } from "@prisma/client";
 
-  const [testosterone, setTestotserone] = useState(0);
 
+export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <Button onClick={handleClick}>
-        У меня умирал сервер и я ничего не мог сделать, нажми на меня, чтобы
-        вырос тестостерон
-      </Button>
-      {!!testosterone && (
-        <p className="text-red-700 mt-10">Твой тестостерон {testosterone}</p>
-      )}
+    <main className="flex min-h-screen flex-col p-24">
+      <CreateCourseForm revalidatePagePath="/" className="max-w-[300px] mb-10" />
+      <CoursesList revalidatePagePath="/" />
     </main>
   );
 }
