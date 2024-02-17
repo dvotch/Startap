@@ -2,7 +2,6 @@
 
 import { CoursesList } from "@/features/courses-list/pub/courses-list";
 import { CreateCourseForm } from "@/features/courses-list/pub/create-course-form";
-import { PrismaClient } from "@prisma/client";
 
 
 export default async function Home() {

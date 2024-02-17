@@ -34,7 +34,7 @@ export function CourseItem({
       </CardHeader>
       <CardFooter>
         <Button disabled={isLoadingDelete} onClick={handleDelete}>
-          Удалить
+          Удалитьe
         </Button>
       </CardFooter>
     </Card>
